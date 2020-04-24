@@ -13,6 +13,8 @@
 		46754AF62451EC1800873031 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46754AF42451EC1800873031 /* Main.storyboard */; };
 		46754AF82451EC1A00873031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46754AF72451EC1A00873031 /* Assets.xcassets */; };
 		46754AFB2451EC1A00873031 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46754AF92451EC1A00873031 /* LaunchScreen.storyboard */; };
+		94EF0A7A2452D8C0005341CE /* QRCodeGenarator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EF0A792452D8C0005341CE /* QRCodeGenarator.swift */; };
+		94EF0A7D2452FD72005341CE /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EF0A7C2452FD72005341CE /* PersonModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		46754AF72451EC1A00873031 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46754AFA2451EC1A00873031 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46754AFC2451EC1A00873031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94EF0A792452D8C0005341CE /* QRCodeGenarator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenarator.swift; sourceTree = "<group>"; };
+		94EF0A7C2452FD72005341CE /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 		46754AED2451EC1800873031 /* SocialDistanceTracker */ = {
 			isa = PBXGroup;
 			children = (
+				94EF0A7B2452FD4E005341CE /* Model */,
+				94EF0A782452D88D005341CE /* Utility */,
 				46754AEE2451EC1800873031 /* AppDelegate.swift */,
 				46754AF02451EC1800873031 /* SceneDelegate.swift */,
 				46754AF22451EC1800873031 /* ViewController.swift */,
@@ -65,6 +71,22 @@
 				46754AFC2451EC1A00873031 /* Info.plist */,
 			);
 			path = SocialDistanceTracker;
+			sourceTree = "<group>";
+		};
+		94EF0A782452D88D005341CE /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				94EF0A792452D8C0005341CE /* QRCodeGenarator.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		94EF0A7B2452FD4E005341CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				94EF0A7C2452FD72005341CE /* PersonModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +161,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				46754AF32451EC1800873031 /* ViewController.swift in Sources */,
+				94EF0A7A2452D8C0005341CE /* QRCodeGenarator.swift in Sources */,
+				94EF0A7D2452FD72005341CE /* PersonModel.swift in Sources */,
 				46754AEF2451EC1800873031 /* AppDelegate.swift in Sources */,
 				46754AF12451EC1800873031 /* SceneDelegate.swift in Sources */,
 			);
