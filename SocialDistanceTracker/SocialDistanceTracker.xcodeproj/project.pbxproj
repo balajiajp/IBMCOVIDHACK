@@ -19,6 +19,9 @@
 		46754B2024543A3400873031 /* SelfAssmtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46754AF22451EC1800873031 /* SelfAssmtViewController.swift */; };
 		46754B222454839900873031 /* HealthKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46754B212454839900873031 /* HealthKitViewController.swift */; };
 		46754B252454871F00873031 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46754B242454871F00873031 /* HealthKit.framework */; };
+		46754B322454980500873031 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46754B2F2454980500873031 /* PersonModel.swift */; };
+		46754B332454980500873031 /* QRCodeGenarator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46754B312454980500873031 /* QRCodeGenarator.swift */; };
+		46754B352454988900873031 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46754B342454988900873031 /* RegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		46754B212454839900873031 /* HealthKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitViewController.swift; sourceTree = "<group>"; };
 		46754B232454871E00873031 /* SocialDistanceTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SocialDistanceTracker.entitlements; sourceTree = "<group>"; };
 		46754B242454871F00873031 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		46754B2F2454980500873031 /* PersonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
+		46754B312454980500873031 /* QRCodeGenarator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeGenarator.swift; sourceTree = "<group>"; };
+		46754B342454988900873031 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +109,14 @@
 		46754AED2451EC1800873031 /* SocialDistanceTracker */ = {
 			isa = PBXGroup;
 			children = (
+				46754B2E2454980500873031 /* Model */,
+				46754B302454980500873031 /* Utility */,
 				46754B232454871E00873031 /* SocialDistanceTracker.entitlements */,
 				46754AEE2451EC1800873031 /* AppDelegate.swift */,
 				46754AF02451EC1800873031 /* SceneDelegate.swift */,
 				46754AF22451EC1800873031 /* SelfAssmtViewController.swift */,
 				46754B212454839900873031 /* HealthKitViewController.swift */,
+				46754B342454988900873031 /* RegistrationViewController.swift */,
 				46754AF42451EC1800873031 /* Main.storyboard */,
 				46754B1E24542FBC00873031 /* Assessment.storyboard */,
 				46754B1C24542F0400873031 /* CovidQuestTask.swift */,
@@ -141,6 +150,22 @@
 				46754B242454871F00873031 /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		46754B2E2454980500873031 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				46754B2F2454980500873031 /* PersonModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46754B302454980500873031 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				46754B312454980500873031 /* QRCodeGenarator.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,11 +264,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46754B322454980500873031 /* PersonModel.swift in Sources */,
 				46754B2024543A3400873031 /* SelfAssmtViewController.swift in Sources */,
+				46754B352454988900873031 /* RegistrationViewController.swift in Sources */,
 				46754AEF2451EC1800873031 /* AppDelegate.swift in Sources */,
 				46754B222454839900873031 /* HealthKitViewController.swift in Sources */,
 				46754B1D24542F0400873031 /* CovidQuestTask.swift in Sources */,
 				46754AF12451EC1800873031 /* SceneDelegate.swift in Sources */,
+				46754B332454980500873031 /* QRCodeGenarator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
