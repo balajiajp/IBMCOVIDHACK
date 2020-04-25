@@ -9,21 +9,64 @@
 /* Begin PBXBuildFile section */
 		46754AEF2451EC1800873031 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46754AEE2451EC1800873031 /* AppDelegate.swift */; };
 		46754AF12451EC1800873031 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46754AF02451EC1800873031 /* SceneDelegate.swift */; };
-		46754AF32451EC1800873031 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46754AF22451EC1800873031 /* ViewController.swift */; };
 		46754AF62451EC1800873031 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46754AF42451EC1800873031 /* Main.storyboard */; };
 		46754AF82451EC1A00873031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46754AF72451EC1A00873031 /* Assets.xcassets */; };
 		46754AFB2451EC1A00873031 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46754AF92451EC1A00873031 /* LaunchScreen.storyboard */; };
+		46754B1924542D3B00873031 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46754B1524542CE400873031 /* ResearchKit.framework */; };
+		46754B1A24542D3B00873031 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46754B1524542CE400873031 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		46754B1D24542F0400873031 /* CovidQuestTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46754B1C24542F0400873031 /* CovidQuestTask.swift */; };
+		46754B1F24542FBC00873031 /* Assessment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46754B1E24542FBC00873031 /* Assessment.storyboard */; };
+		46754B2024543A3400873031 /* SelfAssmtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46754AF22451EC1800873031 /* SelfAssmtViewController.swift */; };
+		46754B222454839900873031 /* HealthKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46754B212454839900873031 /* HealthKitViewController.swift */; };
+		46754B252454871F00873031 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46754B242454871F00873031 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		46754B1424542CE400873031 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46754B0E24542CE400873031 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B183A5951A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		46754B1624542CE400873031 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46754B0E24542CE400873031 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
+			remoteInfo = ResearchKitTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		46754B1B24542D3B00873031 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				46754B1A24542D3B00873031 /* ResearchKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		46754AEB2451EC1800873031 /* SocialDistanceTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialDistanceTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46754AEE2451EC1800873031 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46754AF02451EC1800873031 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		46754AF22451EC1800873031 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		46754AF22451EC1800873031 /* SelfAssmtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfAssmtViewController.swift; sourceTree = "<group>"; };
 		46754AF52451EC1800873031 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46754AF72451EC1A00873031 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46754AFA2451EC1A00873031 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46754AFC2451EC1A00873031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46754B0E24542CE400873031 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = RSKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
+		46754B1C24542F0400873031 /* CovidQuestTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovidQuestTask.swift; sourceTree = "<group>"; };
+		46754B1E24542FBC00873031 /* Assessment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Assessment.storyboard; sourceTree = "<group>"; };
+		46754B212454839900873031 /* HealthKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitViewController.swift; sourceTree = "<group>"; };
+		46754B232454871E00873031 /* SocialDistanceTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SocialDistanceTracker.entitlements; sourceTree = "<group>"; };
+		46754B242454871F00873031 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46754B1924542D3B00873031 /* ResearchKit.framework in Frameworks */,
+				46754B252454871F00873031 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,8 +85,10 @@
 		46754AE22451EC1800873031 = {
 			isa = PBXGroup;
 			children = (
+				46754B0D24542CD500873031 /* Researchkit */,
 				46754AED2451EC1800873031 /* SocialDistanceTracker */,
 				46754AEC2451EC1800873031 /* Products */,
+				46754B1824542D3B00873031 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +103,44 @@
 		46754AED2451EC1800873031 /* SocialDistanceTracker */ = {
 			isa = PBXGroup;
 			children = (
+				46754B232454871E00873031 /* SocialDistanceTracker.entitlements */,
 				46754AEE2451EC1800873031 /* AppDelegate.swift */,
 				46754AF02451EC1800873031 /* SceneDelegate.swift */,
-				46754AF22451EC1800873031 /* ViewController.swift */,
+				46754AF22451EC1800873031 /* SelfAssmtViewController.swift */,
+				46754B212454839900873031 /* HealthKitViewController.swift */,
 				46754AF42451EC1800873031 /* Main.storyboard */,
+				46754B1E24542FBC00873031 /* Assessment.storyboard */,
+				46754B1C24542F0400873031 /* CovidQuestTask.swift */,
 				46754AF72451EC1A00873031 /* Assets.xcassets */,
 				46754AF92451EC1A00873031 /* LaunchScreen.storyboard */,
 				46754AFC2451EC1A00873031 /* Info.plist */,
 			);
 			path = SocialDistanceTracker;
+			sourceTree = "<group>";
+		};
+		46754B0D24542CD500873031 /* Researchkit */ = {
+			isa = PBXGroup;
+			children = (
+				46754B0E24542CE400873031 /* ResearchKit.xcodeproj */,
+			);
+			name = Researchkit;
+			sourceTree = "<group>";
+		};
+		46754B0F24542CE400873031 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				46754B1524542CE400873031 /* ResearchKit.framework */,
+				46754B1724542CE400873031 /* ResearchKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		46754B1824542D3B00873031 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46754B242454871F00873031 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +153,7 @@
 				46754AE72451EC1800873031 /* Sources */,
 				46754AE82451EC1800873031 /* Frameworks */,
 				46754AE92451EC1800873031 /* Resources */,
+				46754B1B24542D3B00873031 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -113,12 +190,35 @@
 			mainGroup = 46754AE22451EC1800873031;
 			productRefGroup = 46754AEC2451EC1800873031 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 46754B0F24542CE400873031 /* Products */;
+					ProjectRef = 46754B0E24542CE400873031 /* ResearchKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				46754AEA2451EC1800873031 /* SocialDistanceTracker */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		46754B1524542CE400873031 /* ResearchKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ResearchKit.framework;
+			remoteRef = 46754B1424542CE400873031 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		46754B1724542CE400873031 /* ResearchKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ResearchKitTests.xctest;
+			remoteRef = 46754B1624542CE400873031 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		46754AE92451EC1800873031 /* Resources */ = {
@@ -127,6 +227,7 @@
 			files = (
 				46754AFB2451EC1A00873031 /* LaunchScreen.storyboard in Resources */,
 				46754AF82451EC1A00873031 /* Assets.xcassets in Resources */,
+				46754B1F24542FBC00873031 /* Assessment.storyboard in Resources */,
 				46754AF62451EC1800873031 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,8 +239,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46754AF32451EC1800873031 /* ViewController.swift in Sources */,
+				46754B2024543A3400873031 /* SelfAssmtViewController.swift in Sources */,
 				46754AEF2451EC1800873031 /* AppDelegate.swift in Sources */,
+				46754B222454839900873031 /* HealthKitViewController.swift in Sources */,
+				46754B1D24542F0400873031 /* CovidQuestTask.swift in Sources */,
 				46754AF12451EC1800873031 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +387,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SocialDistanceTracker/SocialDistanceTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SocialDistanceTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -301,6 +405,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SocialDistanceTracker/SocialDistanceTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SocialDistanceTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
