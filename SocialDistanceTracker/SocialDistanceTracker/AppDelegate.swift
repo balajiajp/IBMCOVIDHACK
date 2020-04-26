@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import ResearchKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var userIsRegistered = false
+    var userQRCode : UIImage? = nil
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

@@ -20,6 +20,20 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>We need bluetooth to calculate distance between two device</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>We need bluetooth to calculate distance between two device</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>SocialDistanceTracker would like to access your Health data to help you track your symptoms and your treatment. </string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>SocialDistanceTracker would like to write Health data to help you track your symptoms and your treatment.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We need location permission for contact tracing</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need location permission for contact tracing</string>
+	<key>Privacy – Location Always Usage Description</key>
+	<string>We need location permission for contact tracing</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -34,7 +48,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
+					<string>Assessment</string>
 				</dict>
 			</array>
 		</dict>
@@ -42,7 +56,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
+	<string>Assessment</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
