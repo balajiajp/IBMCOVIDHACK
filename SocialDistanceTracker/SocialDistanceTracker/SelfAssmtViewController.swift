@@ -13,6 +13,7 @@ class SelfAssmtViewController: UIViewController, ORKTaskViewControllerDelegate {
 
     
     @IBOutlet weak var resultsView: UIView!
+    @IBOutlet weak var qrImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,12 @@ class SelfAssmtViewController: UIViewController, ORKTaskViewControllerDelegate {
         if (!appDelegate.userIsRegistered) {
             self.performSegue(withIdentifier: "Registration", sender: self)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.qrImageView.image = (UIApplication.shared.delegate as! AppDelegate).userQRCode
+        self.qrImageView.backgroundColor = UIColor.green
     }
     
     @IBAction func selfAssmtActionHandler(_ button: UIButton) {

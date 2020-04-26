@@ -26,7 +26,6 @@ class RegistrationViewController: UIViewController {
     
     @IBOutlet weak var imgViewVendor: UIImageView!
     @IBOutlet weak var imgViewUser: UIImageView!
-    @IBOutlet weak var imgViewQRCode: UIImageView!
     
     @IBAction func toggleUserTypeSelection(_ sender: Any) {
         self.view.endEditing(true)
@@ -66,23 +65,20 @@ class RegistrationViewController: UIViewController {
         person.adhaarNumber = txtFieldAdhaar.text
         
         if person.validateUserInformation() {
-            imgViewQRCode.backgroundColor = isSafe ? .green : .red
             isSafe = !isSafe
             let localDict = ["Name":"\(String(describing: person.firstName))","Mobile":"\(person.mobileNumber ?? "")","UserType":"\(String(describing: person.userType))"]
             guard let qrImage = QRCodeGenarator.generateQRCode(dictData: localDict) else {return}
-            imgViewQRCode.image = qrImage
+            
+            (UIApplication.shared.delegate as! AppDelegate).userQRCode = qrImage
             self.showRegSuccessAlert()
         }else{
             showAlert()
-            imgViewQRCode.backgroundColor = .clear
-            imgViewQRCode.image = nil
         }
     }
     
     func moveToHome()
     {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.userIsRegistered = true
+        (UIApplication.shared.delegate as! AppDelegate).userIsRegistered = true
         self.dismiss(animated: true)
         self.closeVC!()
     }

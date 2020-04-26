@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Self Assmt View Controller-->
+        <!--Home-->
         <scene sceneID="CVd-dx-RpU">
             <objects>
                 <viewController id="9PR-ev-Dll" customClass="SelfAssmtViewController" customModule="SocialDistanceTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,43 +15,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrY-Iu-3Ur">
-                                <rect key="frame" x="44" y="373" width="123" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrY-Iu-3Ur">
+                                <rect key="frame" x="44" y="623" width="123" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Self Assessment">
-                                    <color key="titleColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlQ-nY-a4W">
-                                <rect key="frame" x="20" y="186" width="171" height="179"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlQ-nY-a4W">
+                                <rect key="frame" x="20" y="436" width="171" height="179"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="179" id="GRA-IC-HqL"/>
+                                    <constraint firstAttribute="width" constant="171" id="Q6b-e6-koc"/>
+                                </constraints>
                                 <state key="normal" image="SelfAssmt"/>
                                 <connections>
                                     <action selector="selfAssmtActionHandler:" destination="9PR-ev-Dll" eventType="touchUpInside" id="gc7-Xp-y1k"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7p-HG-Mqt">
-                                <rect key="frame" x="223" y="186" width="171" height="179"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7p-HG-Mqt">
+                                <rect key="frame" x="223" y="436" width="171" height="179"/>
                                 <state key="normal" image="healthstatus"/>
                                 <connections>
                                     <segue destination="JsK-ye-muz" kind="presentation" id="SWx-wr-CUG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pON-VH-xio">
-                                <rect key="frame" x="253" y="373" width="110" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pON-VH-xio">
+                                <rect key="frame" x="253.5" y="623" width="110" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Health Monitor">
-                                    <color key="titleColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="selfAssmtActionHandler:" destination="9PR-ev-Dll" eventType="touchUpInside" id="Qea-Ks-GCj"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIj-Xs-sho">
-                                <rect key="frame" x="10" y="78" width="394" height="784"/>
+                                <rect key="frame" x="10" y="677" width="394" height="185"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FGA-8N-ovh">
@@ -106,19 +106,52 @@ Monitor your health</string>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cVA-UE-1yp">
+                                <rect key="frame" x="20" y="148" width="374" height="268"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My QR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyw-tY-dCN">
+                                <rect key="frame" x="177" y="105" width="60" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="XE3-2A-BeG"/>
+                                    <constraint firstAttribute="height" constant="25" id="iRA-Ic-hQO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jlQ-nY-a4W" firstAttribute="leading" secondItem="cVA-UE-1yp" secondAttribute="leading" id="4x4-us-JNH"/>
+                            <constraint firstItem="jlQ-nY-a4W" firstAttribute="top" secondItem="rmo-Y4-f61" secondAttribute="top" constant="436" id="9EH-1C-RZo"/>
+                            <constraint firstItem="jlQ-nY-a4W" firstAttribute="top" secondItem="cVA-UE-1yp" secondAttribute="bottom" constant="20" id="GUU-wv-bIF"/>
+                            <constraint firstItem="v7p-HG-Mqt" firstAttribute="trailing" secondItem="cVA-UE-1yp" secondAttribute="trailing" id="JHZ-Ue-rJP"/>
+                            <constraint firstItem="cVA-UE-1yp" firstAttribute="leading" secondItem="yUM-aE-Nct" secondAttribute="leading" constant="20" id="JtQ-LS-Gbj"/>
+                            <constraint firstItem="nyw-tY-dCN" firstAttribute="centerX" secondItem="yUM-aE-Nct" secondAttribute="centerX" id="KSZ-HJ-fQt"/>
+                            <constraint firstItem="v7p-HG-Mqt" firstAttribute="centerX" secondItem="pON-VH-xio" secondAttribute="centerX" id="Lh4-Y7-R3e"/>
+                            <constraint firstItem="cVA-UE-1yp" firstAttribute="top" secondItem="nyw-tY-dCN" secondAttribute="bottom" constant="18" id="Y3V-HM-8oQ"/>
+                            <constraint firstItem="hrY-Iu-3Ur" firstAttribute="top" secondItem="jlQ-nY-a4W" secondAttribute="bottom" constant="8" id="bCe-KU-499"/>
+                            <constraint firstItem="yUM-aE-Nct" firstAttribute="trailing" secondItem="cVA-UE-1yp" secondAttribute="trailing" constant="20" id="hEb-cq-DqT"/>
+                            <constraint firstItem="nyw-tY-dCN" firstAttribute="top" secondItem="yUM-aE-Nct" secondAttribute="top" constant="17" id="lCA-18-A9L"/>
+                            <constraint firstItem="v7p-HG-Mqt" firstAttribute="top" secondItem="jlQ-nY-a4W" secondAttribute="top" id="nLw-1c-Wpd"/>
+                            <constraint firstItem="v7p-HG-Mqt" firstAttribute="leading" secondItem="jlQ-nY-a4W" secondAttribute="trailing" constant="32" id="oLB-nZ-cUY"/>
+                            <constraint firstItem="v7p-HG-Mqt" firstAttribute="bottom" secondItem="jlQ-nY-a4W" secondAttribute="bottom" id="qgU-oj-JIX"/>
+                            <constraint firstItem="jlQ-nY-a4W" firstAttribute="centerX" secondItem="hrY-Iu-3Ur" secondAttribute="centerX" id="soH-B1-za9"/>
+                            <constraint firstItem="pON-VH-xio" firstAttribute="top" secondItem="v7p-HG-Mqt" secondAttribute="bottom" constant="8" id="vth-h3-WZc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yUM-aE-Nct"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Rw0-Sh-8G3"/>
+                    <navigationItem key="navigationItem" title="Home" id="Rw0-Sh-8G3"/>
                     <connections>
+                        <outlet property="qrImageView" destination="cVA-UE-1yp" id="Ohr-Ny-cEa"/>
                         <outlet property="resultsView" destination="VIj-Xs-sho" id="nY7-eU-8HF"/>
                         <segue destination="PHH-H9-ieX" kind="presentation" identifier="Registration" modalPresentationStyle="fullScreen" id="zF7-ln-fgh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CrG-kT-oNo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-470" y="-376"/>
+            <point key="canvasLocation" x="-471.01449275362324" y="-376.33928571428572"/>
         </scene>
         <!--Health Kit View Controller-->
         <scene sceneID="Q1E-S2-74G">
@@ -168,7 +201,7 @@ Monitor your health</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="2PG-pc-htr"/>
                     </view>
                     <connections>
@@ -201,7 +234,7 @@ Monitor your health</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qtt-L3-wYW">
-                                        <rect key="frame" x="10" y="69" width="83" height="21"/>
+                                        <rect key="frame" x="10" y="84" width="83" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="JUV-gr-8CU"/>
                                         </constraints>
@@ -210,7 +243,7 @@ Monitor your health</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edd-na-tJJ">
-                                        <rect key="frame" x="10" y="134" width="83" height="21"/>
+                                        <rect key="frame" x="10" y="164" width="83" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="6q4-ZI-ef4"/>
                                         </constraints>
@@ -227,7 +260,7 @@ Monitor your health</string>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rOk-UC-MSM">
-                                        <rect key="frame" x="10" y="95" width="364" height="34"/>
+                                        <rect key="frame" x="10" y="110" width="364" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="KIs-zi-9Pt"/>
                                         </constraints>
@@ -235,7 +268,7 @@ Monitor your health</string>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JBe-Ug-jBv">
-                                        <rect key="frame" x="10" y="160" width="364" height="34"/>
+                                        <rect key="frame" x="10" y="190" width="364" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="5xc-bt-0Qt"/>
                                         </constraints>
@@ -243,7 +276,7 @@ Monitor your health</string>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Adhaar Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WVg-8K-ulW">
-                                        <rect key="frame" x="10" y="225" width="364" height="34"/>
+                                        <rect key="frame" x="10" y="270" width="364" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="If1-nd-M1f"/>
                                         </constraints>
@@ -251,7 +284,7 @@ Monitor your health</string>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zY-Yv-Jmp">
-                                        <rect key="frame" x="10" y="267" width="83" height="21"/>
+                                        <rect key="frame" x="10" y="324" width="83" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="6PB-zH-ebA"/>
                                         </constraints>
@@ -260,7 +293,7 @@ Monitor your health</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="q9Y-9a-OfX">
-                                        <rect key="frame" x="10" y="298" width="364" height="50"/>
+                                        <rect key="frame" x="10" y="355" width="364" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2W-vo-7tB">
                                                 <rect key="frame" x="0.0" y="0.0" width="177" height="50"/>
@@ -344,7 +377,7 @@ Monitor your health</string>
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adhaar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvc-Vd-mBa">
-                                        <rect key="frame" x="10" y="199" width="83" height="21"/>
+                                        <rect key="frame" x="10" y="244" width="83" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="eoi-QS-hQp"/>
                                         </constraints>
@@ -353,56 +386,50 @@ Monitor your health</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvU-a3-om3">
-                                        <rect key="frame" x="10" y="358" width="364" height="44"/>
-                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="10" y="430" width="364" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="J61-fZ-dTj"/>
+                                            <constraint firstAttribute="height" constant="50" id="J61-fZ-dTj"/>
                                         </constraints>
-                                        <state key="normal" title="Generate QR Code">
-                                            <color key="titleColor" red="0.0" green="0.074509803920000006" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="Register">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="onClickGenearateCode:" destination="q8K-ZM-wKg" eventType="touchUpInside" id="PRj-jg-h9O"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xPl-sf-786">
-                                        <rect key="frame" x="10" y="412" width="364" height="356"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="Li6-ho-UIK" firstAttribute="trailing" secondItem="Qtt-L3-wYW" secondAttribute="trailing" id="0Ya-zI-xBP"/>
                                     <constraint firstItem="WVg-8K-ulW" firstAttribute="top" secondItem="rvc-Vd-mBa" secondAttribute="bottom" constant="5" id="135-vI-B1X"/>
-                                    <constraint firstItem="0zY-Yv-Jmp" firstAttribute="top" secondItem="WVg-8K-ulW" secondAttribute="bottom" constant="8" id="3Ob-ae-wng"/>
-                                    <constraint firstItem="xPl-sf-786" firstAttribute="top" secondItem="RvU-a3-om3" secondAttribute="bottom" constant="10" id="4ah-o8-0wl"/>
+                                    <constraint firstItem="0zY-Yv-Jmp" firstAttribute="top" secondItem="WVg-8K-ulW" secondAttribute="bottom" constant="20" id="3Ob-ae-wng"/>
                                     <constraint firstItem="0zY-Yv-Jmp" firstAttribute="leading" secondItem="Li6-ho-UIK" secondAttribute="leading" id="F0b-Ss-JJD"/>
-                                    <constraint firstItem="xPl-sf-786" firstAttribute="leading" secondItem="Go3-nF-O7X" secondAttribute="leading" constant="10" id="FPR-qm-BdG"/>
-                                    <constraint firstItem="edd-na-tJJ" firstAttribute="top" secondItem="rOk-UC-MSM" secondAttribute="bottom" constant="5" id="FkL-pb-YBY"/>
+                                    <constraint firstItem="edd-na-tJJ" firstAttribute="top" secondItem="rOk-UC-MSM" secondAttribute="bottom" constant="20" id="FkL-pb-YBY"/>
                                     <constraint firstAttribute="trailing" secondItem="q9Y-9a-OfX" secondAttribute="trailing" constant="10" id="GEI-GF-N53"/>
                                     <constraint firstItem="Li6-ho-UIK" firstAttribute="top" secondItem="Go3-nF-O7X" secondAttribute="top" constant="5" id="GhY-dV-k3C"/>
                                     <constraint firstItem="Li6-ho-UIK" firstAttribute="trailing" secondItem="rvc-Vd-mBa" secondAttribute="trailing" id="Juz-oB-xb9"/>
                                     <constraint firstItem="ekf-MY-tBz" firstAttribute="trailing" secondItem="WVg-8K-ulW" secondAttribute="trailing" id="LLu-Rj-NYc"/>
                                     <constraint firstItem="ekf-MY-tBz" firstAttribute="trailing" secondItem="JBe-Ug-jBv" secondAttribute="trailing" id="Lbo-ym-ZvY"/>
-                                    <constraint firstAttribute="trailing" secondItem="xPl-sf-786" secondAttribute="trailing" constant="10" id="OUF-iU-cXc"/>
                                     <constraint firstItem="Li6-ho-UIK" firstAttribute="trailing" secondItem="edd-na-tJJ" secondAttribute="trailing" id="P1i-Dp-9Qd"/>
                                     <constraint firstItem="Li6-ho-UIK" firstAttribute="trailing" secondItem="0zY-Yv-Jmp" secondAttribute="trailing" id="PQx-bm-ZJ8"/>
                                     <constraint firstItem="Li6-ho-UIK" firstAttribute="leading" secondItem="Go3-nF-O7X" secondAttribute="leading" constant="10" id="Pkc-PM-ovB"/>
-                                    <constraint firstItem="RvU-a3-om3" firstAttribute="top" secondItem="q9Y-9a-OfX" secondAttribute="bottom" constant="10" id="Q3k-Z1-7Gb"/>
+                                    <constraint firstItem="RvU-a3-om3" firstAttribute="top" secondItem="q9Y-9a-OfX" secondAttribute="bottom" constant="25" id="Q3k-Z1-7Gb"/>
                                     <constraint firstItem="Qtt-L3-wYW" firstAttribute="leading" secondItem="Go3-nF-O7X" secondAttribute="leading" constant="10" id="SLk-SO-98r"/>
                                     <constraint firstItem="JBe-Ug-jBv" firstAttribute="top" secondItem="edd-na-tJJ" secondAttribute="bottom" constant="5" id="VTa-R9-BK4"/>
                                     <constraint firstItem="rvc-Vd-mBa" firstAttribute="leading" secondItem="Li6-ho-UIK" secondAttribute="leading" id="X0B-BI-YnP"/>
                                     <constraint firstAttribute="trailing" secondItem="ekf-MY-tBz" secondAttribute="trailing" constant="10" id="Xnx-Zc-oqs"/>
-                                    <constraint firstAttribute="bottom" secondItem="xPl-sf-786" secondAttribute="bottom" constant="10" id="c1d-wv-4Cw"/>
                                     <constraint firstItem="JBe-Ug-jBv" firstAttribute="leading" secondItem="ekf-MY-tBz" secondAttribute="leading" id="d7J-ON-YNf"/>
                                     <constraint firstItem="rOk-UC-MSM" firstAttribute="trailing" secondItem="ekf-MY-tBz" secondAttribute="trailing" id="e6l-pe-PBy"/>
                                     <constraint firstItem="q9Y-9a-OfX" firstAttribute="leading" secondItem="Go3-nF-O7X" secondAttribute="leading" constant="10" id="eKx-Wg-HBj"/>
-                                    <constraint firstItem="rvc-Vd-mBa" firstAttribute="top" secondItem="JBe-Ug-jBv" secondAttribute="bottom" constant="5" id="ino-Si-UNU"/>
+                                    <constraint firstItem="rvc-Vd-mBa" firstAttribute="top" secondItem="JBe-Ug-jBv" secondAttribute="bottom" constant="20" id="ino-Si-UNU"/>
                                     <constraint firstItem="ekf-MY-tBz" firstAttribute="leading" secondItem="Go3-nF-O7X" secondAttribute="leading" constant="10" id="lmt-0W-L49"/>
                                     <constraint firstItem="edd-na-tJJ" firstAttribute="leading" secondItem="Li6-ho-UIK" secondAttribute="leading" id="lng-fJ-abO"/>
                                     <constraint firstItem="rOk-UC-MSM" firstAttribute="leading" secondItem="ekf-MY-tBz" secondAttribute="leading" id="mYc-Om-GrG"/>
                                     <constraint firstItem="WVg-8K-ulW" firstAttribute="leading" secondItem="ekf-MY-tBz" secondAttribute="leading" id="nAH-ih-jAm"/>
                                     <constraint firstItem="rOk-UC-MSM" firstAttribute="top" secondItem="Qtt-L3-wYW" secondAttribute="bottom" constant="5" id="o0F-XH-dZl"/>
-                                    <constraint firstItem="Qtt-L3-wYW" firstAttribute="top" secondItem="ekf-MY-tBz" secondAttribute="bottom" constant="5" id="tvo-xF-1v0"/>
+                                    <constraint firstItem="Qtt-L3-wYW" firstAttribute="top" secondItem="ekf-MY-tBz" secondAttribute="bottom" constant="20" id="tvo-xF-1v0"/>
                                     <constraint firstItem="q9Y-9a-OfX" firstAttribute="top" secondItem="0zY-Yv-Jmp" secondAttribute="bottom" constant="10" id="vjw-ij-bIE"/>
                                     <constraint firstItem="ekf-MY-tBz" firstAttribute="top" secondItem="Li6-ho-UIK" secondAttribute="bottom" constant="5" id="y1S-ZZ-IQ2"/>
                                     <constraint firstAttribute="trailing" secondItem="RvU-a3-om3" secondAttribute="trailing" constant="10" id="y7R-hG-NqK"/>
@@ -421,7 +448,6 @@ Monitor your health</string>
                     </view>
                     <navigationItem key="navigationItem" id="zcu-9L-FYD"/>
                     <connections>
-                        <outlet property="imgViewQRCode" destination="xPl-sf-786" id="pW0-2L-AKr"/>
                         <outlet property="imgViewUser" destination="CqA-ss-0Lf" id="gTl-uC-xuT"/>
                         <outlet property="imgViewVendor" destination="FY7-Fb-xty" id="Mux-jY-Okd"/>
                         <outlet property="txtFieldAdhaar" destination="WVg-8K-ulW" id="YRk-Y1-79O"/>
@@ -454,7 +480,7 @@ Monitor your health</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7f0-Aa-Yu9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Eroll">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>

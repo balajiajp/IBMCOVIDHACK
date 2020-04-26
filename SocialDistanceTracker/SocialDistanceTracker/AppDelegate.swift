@@ -13,6 +13,7 @@ import ResearchKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var userIsRegistered = false
+    var userQRCode : UIImage? = nil
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
