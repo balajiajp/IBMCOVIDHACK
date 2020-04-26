@@ -80,7 +80,7 @@ class RegistrationViewController: UIViewController, CLLocationManagerDelegate {
         
         if person.validateUserInformation() {
             isSafe = !isSafe
-            let localDict = ["Name":"\(String(describing: person.firstName))","Mobile":"\(person.mobileNumber ?? "")","UserType":"\(String(describing: person.userType))"]
+            let localDict = ["FirstName":"\(String(describing: person.firstName))","MobileNumber":"\(person.mobileNumber ?? "")","UserType":"\(String(describing: person.userType))"]
             guard let qrImage = QRCodeGenarator.generateQRCode(dictData: localDict) else {return}
             
             (UIApplication.shared.delegate as! AppDelegate).userQRCode = qrImage

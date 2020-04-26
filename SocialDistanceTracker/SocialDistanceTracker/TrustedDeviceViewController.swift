@@ -45,7 +45,7 @@ class TrustedDeviceViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "SDTTrustedDeviceTableViewCell") as? SDTTrustedDeviceTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "TrustedDeviceTableViewCell") as? TrustedDeviceTableViewCell {
             let item = trustedDeviceData[indexPath.row]
             if let type: UserCodeType = UserCodeType(rawValue: item["UserType"] ?? UserCodeType.User.rawValue) {
                 switch type {
@@ -84,7 +84,7 @@ class TrustedDeviceViewController: UIViewController, UITableViewDataSource, UITa
     }
 }
 
-class SDTTrustedDeviceTableViewCell: UITableViewCell {
+class TrustedDeviceTableViewCell: UITableViewCell {
     
     @IBOutlet var lblUserDetails: UILabel!
     @IBOutlet var lblName: UILabel!

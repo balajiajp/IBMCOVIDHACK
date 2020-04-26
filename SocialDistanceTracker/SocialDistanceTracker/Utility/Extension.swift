@@ -12,6 +12,19 @@ import AVFoundation
 var vSpinner : UIView?
 
 extension UIViewController {
+    // hide the navigation bar
+    func hideNavigationBar(){
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+
+    }
+    
+    // show the navigation bar
+    func showNavigationBar() {
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    // start loading view
     func showSpinner(onView : UIView) {
         let spinnerView = UIView.init(frame: onView.bounds)
         spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
@@ -27,6 +40,7 @@ extension UIViewController {
         vSpinner = spinnerView
     }
     
+    // remove loading view
     func removeSpinner() {
         DispatchQueue.main.async {
             vSpinner?.removeFromSuperview()
@@ -36,6 +50,7 @@ extension UIViewController {
 }
 
 extension UIDevice {
+    // device vibration
     static func vibrate() {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
@@ -52,6 +67,7 @@ extension UIWindow {
 }
 
 extension UIApplication{
+    // get presented view conroller
     class func getPresentedViewController() -> UIViewController? {
         var presentViewController = UIWindow.key?.rootViewController
         while let pVC = presentViewController?.presentedViewController

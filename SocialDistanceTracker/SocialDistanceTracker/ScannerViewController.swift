@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import AVFoundation
 
-class STDScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     @IBOutlet weak var cameraContainerView: UIView!
     @IBOutlet weak var startStopButton: UIButton!
     var captureSession: AVCaptureSession!
@@ -70,6 +70,7 @@ class STDScannerViewController: UIViewController, AVCaptureMetadataOutputObjects
         if (captureSession?.isRunning == false) {
             captureSession?.startRunning()
         }
+        self.hideNavigationBar()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -78,6 +79,7 @@ class STDScannerViewController: UIViewController, AVCaptureMetadataOutputObjects
         if (captureSession?.isRunning == true) {
             captureSession?.stopRunning()
         }
+        self.showNavigationBar()
     }
     
     // MARK: Camera Settings
@@ -88,12 +90,16 @@ class STDScannerViewController: UIViewController, AVCaptureMetadataOutputObjects
         captureSession = AVCaptureSession()
         
         // Get the default camera
-        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
+        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else {
+            self.removeSpinner()
+            return
+        }
         let videoInput: AVCaptureDeviceInput
         
         do {
             videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
         } catch {
+            self.removeSpinner()
             return
         }
         
@@ -102,6 +108,7 @@ class STDScannerViewController: UIViewController, AVCaptureMetadataOutputObjects
         } else { //simulator
             captureSession = nil
             viewModel.failed()
+            self.removeSpinner()
             return
         }
         
@@ -116,6 +123,7 @@ class STDScannerViewController: UIViewController, AVCaptureMetadataOutputObjects
         } else { //simulator
             captureSession = nil
             viewModel.failed()
+            self.removeSpinner()
             return
         }
         
@@ -150,6 +158,7 @@ class STDScannerViewController: UIViewController, AVCaptureMetadataOutputObjects
         if let metadataObject = metadataObjects.first {
             guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
             guard let stringValue = readableObject.stringValue else { return }
+            UIDevice.vibrate()
             
             // Show bounds
             let qrCodeObject = previewLayer.transformedMetadataObject(for: readableObject)
@@ -185,5 +194,9 @@ class STDScannerViewController: UIViewController, AVCaptureMetadataOutputObjects
             presentedViewController.view.backgroundColor = .clear
             self.present(presentedViewController, animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func clickActionBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 }
