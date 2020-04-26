@@ -14,7 +14,7 @@ enum UserType {
 }
 
 class RegistrationViewController: UIViewController {
-    
+    var closeVC : (() -> Void)?
     var isSafe : Bool = true
     var userType : UserType?
     var person : PersonModel = PersonModel()
@@ -81,7 +81,10 @@ class RegistrationViewController: UIViewController {
     
     func moveToHome()
     {
-        performSegue(withIdentifier: "HomeScreen", sender: self)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.userIsRegistered = true
+        self.dismiss(animated: true)
+        self.closeVC!()
     }
     
     func showAlert(){

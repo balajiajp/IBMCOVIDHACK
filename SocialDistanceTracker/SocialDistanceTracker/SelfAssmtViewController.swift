@@ -20,6 +20,11 @@ class SelfAssmtViewController: UIViewController, ORKTaskViewControllerDelegate {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         resultsView.isHidden = true
         // Do any additional setup after loading the view.
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        if (!appDelegate.userIsRegistered) {
+            self.performSegue(withIdentifier: "Registration", sender: self)
+        }
     }
     
     @IBAction func selfAssmtActionHandler(_ button: UIButton) {
