@@ -20,6 +20,20 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>We need bluetooth to calculate distance between two device</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>We need bluetooth to calculate distance between two device</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>SocialDistanceTracker would like to access your Health data to help you track your symptoms and your treatment. </string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>SocialDistanceTracker would like to write Health data to help you track your symptoms and your treatment.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We need location permission for contact tracing</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need location permission for contact tracing</string>
+	<key>Privacy – Location Always Usage Description</key>
+	<string>We need location permission for contact tracing</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -60,9 +74,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSHealthShareUsageDescription</key>
-	<string>SocialDistanceTracker would like to access your Health data to help you track your symptoms and your treatment. </string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>SocialDistanceTracker would like to write Health data to help you track your symptoms and your treatment.</string>
 </dict>
 </plist>

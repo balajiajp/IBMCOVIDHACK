@@ -7,18 +7,24 @@
 //
 
 import UIKit
+import CoreLocation
+import CoreBluetooth
+
 
 enum UserType {
     case vendor
     case user
 }
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController: UIViewController, CLLocationManagerDelegate {
     var closeVC : (() -> Void)?
     var isSafe : Bool = true
     var userType : UserType?
     var person : PersonModel = PersonModel()
-    
+    let locationManager = CLLocationManager()
+    var peripheralManager = CBPeripheralManager()
+
+
     @IBOutlet weak var txtFieldFirstName: UITextField!
     @IBOutlet weak var txtFieldLastName: UITextField!
     @IBOutlet weak var txtFieldMobile: UITextField!
@@ -54,9 +60,17 @@ class RegistrationViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Register"
         // Do any additional setup after loading the view.
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
     }
 
 
+    func requestBluetoothPermission() {
+        let showPermissionAlert = 1
+        let options = [CBCentralManagerOptionShowPowerAlertKey: showPermissionAlert]
+        peripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: options)
+    }
+    
     func validateAndGenerateCode(){
         person.firstName = txtFieldFirstName.text
         person.lastName = txtFieldLastName.text
@@ -103,3 +117,65 @@ class RegistrationViewController: UIViewController {
     
 }
 
+extension RegistrationViewController {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedAlways {
+            requestBluetoothPermission()
+
+         /*   if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
+                if CLLocationManager.isRangingAvailable() {
+                    requestBluetoothPermission()
+                }
+            }*/
+        }
+        
+        if status == .authorizedWhenInUse {
+            requestBluetoothPermission()
+           /* if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
+                if CLLocationManager.isRangingAvailable() {
+                      requestBluetoothPermission()
+                }
+            }*/
+        }
+    }
+}
+
+extension RegistrationViewController : CBCentralManagerDelegate, CBPeripheralManagerDelegate {
+    func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
+            switch peripheral.state {
+          case .unknown:
+            print("peripheral.state is .unknown")
+          case .resetting:
+            print("peripheral.state is .resetting")
+          case .unsupported:
+            print("peripheral.state is .unsupported")
+          case .unauthorized:
+            print("peripheral.state is .unauthorized")
+          case .poweredOff:
+            print("peripheral.state is .poweredOff")
+          case .poweredOn:
+            print("peripheral.state is .poweredOn")
+        @unknown default:
+            print("peripheral.state is .poweredOn")
+        }
+    }
+    
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        switch central.state {
+          case .unknown:
+            print("central.state is .unknown")
+          case .resetting:
+            print("central.state is .resetting")
+          case .unsupported:
+            print("central.state is .unsupported")
+          case .unauthorized:
+            print("central.state is .unauthorized")
+          case .poweredOff:
+            print("central.state is .poweredOff")
+          case .poweredOn:
+            print("central.state is .poweredOn")
+        @unknown default:
+            print("central.state is .poweredOn")
+        }
+    }
+}
