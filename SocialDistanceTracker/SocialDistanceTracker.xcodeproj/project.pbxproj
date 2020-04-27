@@ -25,7 +25,14 @@
 		6DF6C6852455763A00DD1377 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6C6812455763900DD1377 /* TutorialPageViewController.swift */; };
 		6DF6C6862455763A00DD1377 /* CarouselItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6C6822455763A00DD1377 /* CarouselItem.swift */; };
 		6DF6C6872455763A00DD1377 /* CarouselItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6C6832455763A00DD1377 /* CarouselItem.xib */; };
-		6DF6C6892455846800DD1377 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6C6882455846800DD1377 /* SceneDelegate.swift */; };
+		8B53B551245623FF00A6DBA8 /* Scanner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B53B550245623FF00A6DBA8 /* Scanner.storyboard */; };
+		8B53B557245625B400A6DBA8 /* CameraPermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53B556245625B400A6DBA8 /* CameraPermissionsManager.swift */; };
+		8B53B559245625DE00A6DBA8 /* PresenterUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53B558245625DE00A6DBA8 /* PresenterUtils.swift */; };
+		8B53B55B2456262A00A6DBA8 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53B55A2456262A00A6DBA8 /* ScannerViewController.swift */; };
+		8B53B55D245626F000A6DBA8 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53B55C245626F000A6DBA8 /* ScannerViewModel.swift */; };
+		8B53B55F245627D400A6DBA8 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53B55E245627D400A6DBA8 /* Extension.swift */; };
+		8B53B5612456322300A6DBA8 /* TrustedDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53B5602456322300A6DBA8 /* TrustedDeviceViewController.swift */; };
+		8B84A5F82456B8510056F636 /* TrustedDeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84A5F72456B8510056F636 /* TrustedDeviceViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +87,14 @@
 		6DF6C6812455763900DD1377 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		6DF6C6822455763A00DD1377 /* CarouselItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselItem.swift; sourceTree = "<group>"; };
 		6DF6C6832455763A00DD1377 /* CarouselItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselItem.xib; sourceTree = "<group>"; };
-		6DF6C6882455846800DD1377 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8B53B550245623FF00A6DBA8 /* Scanner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Scanner.storyboard; sourceTree = "<group>"; };
+		8B53B556245625B400A6DBA8 /* CameraPermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionsManager.swift; sourceTree = "<group>"; };
+		8B53B558245625DE00A6DBA8 /* PresenterUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterUtils.swift; sourceTree = "<group>"; };
+		8B53B55A2456262A00A6DBA8 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		8B53B55C245626F000A6DBA8 /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+		8B53B55E245627D400A6DBA8 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		8B53B5602456322300A6DBA8 /* TrustedDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedDeviceViewController.swift; sourceTree = "<group>"; };
+		8B84A5F72456B8510056F636 /* TrustedDeviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedDeviceViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,11 +137,13 @@
 				46754B232454871E00873031 /* SocialDistanceTracker.entitlements */,
 				46754AEE2451EC1800873031 /* AppDelegate.swift */,
 				46754AF22451EC1800873031 /* SelfAssmtViewController.swift */,
-				6DF6C6882455846800DD1377 /* SceneDelegate.swift */,
 				46754B212454839900873031 /* HealthKitViewController.swift */,
 				46754B342454988900873031 /* RegistrationViewController.swift */,
+				8B53B55A2456262A00A6DBA8 /* ScannerViewController.swift */,
+				8B53B5602456322300A6DBA8 /* TrustedDeviceViewController.swift */,
 				46754AF42451EC1800873031 /* Main.storyboard */,
 				46754B1E24542FBC00873031 /* Assessment.storyboard */,
+				8B53B550245623FF00A6DBA8 /* Scanner.storyboard */,
 				46754B1C24542F0400873031 /* CovidQuestTask.swift */,
 				46754AF72451EC1A00873031 /* Assets.xcassets */,
 				46754AF92451EC1A00873031 /* LaunchScreen.storyboard */,
@@ -165,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				46754B2F2454980500873031 /* PersonModel.swift */,
+				8B53B55C245626F000A6DBA8 /* ScannerViewModel.swift */,
+				8B84A5F72456B8510056F636 /* TrustedDeviceViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +191,9 @@
 			isa = PBXGroup;
 			children = (
 				46754B312454980500873031 /* QRCodeGenarator.swift */,
+				8B53B556245625B400A6DBA8 /* CameraPermissionsManager.swift */,
+				8B53B558245625DE00A6DBA8 /* PresenterUtils.swift */,
+				8B53B55E245627D400A6DBA8 /* Extension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -275,6 +296,7 @@
 				6DF6C6872455763A00DD1377 /* CarouselItem.xib in Resources */,
 				46754B1F24542FBC00873031 /* Assessment.storyboard in Resources */,
 				46754AF62451EC1800873031 /* Main.storyboard in Resources */,
+				8B53B551245623FF00A6DBA8 /* Scanner.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,12 +309,18 @@
 			files = (
 				46754B322454980500873031 /* PersonModel.swift in Sources */,
 				6DF6C6862455763A00DD1377 /* CarouselItem.swift in Sources */,
+				8B53B559245625DE00A6DBA8 /* PresenterUtils.swift in Sources */,
 				6DF6C6842455763A00DD1377 /* TutorialViewController.swift in Sources */,
+				8B53B5612456322300A6DBA8 /* TrustedDeviceViewController.swift in Sources */,
 				46754B2024543A3400873031 /* SelfAssmtViewController.swift in Sources */,
 				46754B352454988900873031 /* RegistrationViewController.swift in Sources */,
+				8B53B557245625B400A6DBA8 /* CameraPermissionsManager.swift in Sources */,
+				8B53B55F245627D400A6DBA8 /* Extension.swift in Sources */,
+				8B53B55B2456262A00A6DBA8 /* ScannerViewController.swift in Sources */,
 				46754AEF2451EC1800873031 /* AppDelegate.swift in Sources */,
 				46754B222454839900873031 /* HealthKitViewController.swift in Sources */,
-				6DF6C6892455846800DD1377 /* SceneDelegate.swift in Sources */,
+				8B53B55D245626F000A6DBA8 /* ScannerViewModel.swift in Sources */,
+				8B84A5F82456B8510056F636 /* TrustedDeviceViewModel.swift in Sources */,
 				6DF6C6852455763A00DD1377 /* TutorialPageViewController.swift in Sources */,
 				46754B1D24542F0400873031 /* CovidQuestTask.swift in Sources */,
 				46754B332454980500873031 /* QRCodeGenarator.swift in Sources */,
@@ -371,7 +399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -425,7 +453,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

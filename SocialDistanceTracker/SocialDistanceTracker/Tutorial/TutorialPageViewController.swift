@@ -31,7 +31,7 @@ class TutorialPageViewController: UIPageViewController {
     }
     
     fileprivate func populateItems() {
-        let heading = ["Social Distancing", "Contact & Violator Tracking", "Non Smart Phone User Support"]
+        let heading = ["Social Distancing Management (SDM)", "Contact & Violator Tracking", "Non Smart Phone User Support"]
         let description = ["This application is for both store keepers(Vendors) and comon users.\n\n Social distancing will be calculated based on device’s bluetooth.\n\n Vendor/User can also add trusted device by scanning their QR code in mobile. So proximity will not trigger for those users/devices", "Vendor/user should geo tag their shop/home within the app so user who visit shop and not making any transaction will also be monitored.\n\n User’s last 21 days GPS location will also be stored locally or remotely. \n\n Violator’s QR code color will be changed or restricted to scan while making any purchase until successful self assessment in app.", "Vendors should only sell products to buyers who has unique QR code by scanning their QR code in App or just by asking their Aadhar/mobile number."]
 
         for (index, t) in heading.enumerated() {

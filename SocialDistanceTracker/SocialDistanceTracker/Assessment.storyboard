@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wMI-kW-Chn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wMI-kW-Chn">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,18 +51,57 @@
                                     <action selector="selfAssmtActionHandler:" destination="9PR-ev-Dll" eventType="touchUpInside" id="Qea-Ks-GCj"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cVA-UE-1yp">
+                                <rect key="frame" x="20" y="148" width="374" height="268"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My QR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyw-tY-dCN">
+                                <rect key="frame" x="177" y="105" width="60" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="XE3-2A-BeG"/>
+                                    <constraint firstAttribute="height" constant="25" id="iRA-Ic-hQO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTo-zX-Zqd">
+                                <rect key="frame" x="334" y="100" width="60" height="35"/>
+                                <color key="backgroundColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="ZxY-Bg-ppq"/>
+                                    <constraint firstAttribute="width" constant="60" id="okQ-kO-8H0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="SCAN">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickActionScan:" destination="9PR-ev-Dll" eventType="touchUpInside" id="noR-4P-K68"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIj-Xs-sho">
-                                <rect key="frame" x="10" y="677" width="394" height="185"/>
+                                <rect key="frame" x="10" y="100" width="394" height="685"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FGA-8N-ovh">
-                                        <rect key="frame" x="8" y="8" width="378" height="768"/>
+                                        <rect key="frame" x="8" y="8" width="378" height="669"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYI-fP-za2">
                                                 <rect key="frame" x="141" y="594" width="60" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Close"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Ok">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="closeResultActionHandler:" destination="9PR-ev-Dll" eventType="touchUpInside" id="hD1-CY-Oqj"/>
                                                 </connections>
@@ -106,31 +146,19 @@ Monitor your health</string>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cVA-UE-1yp">
-                                <rect key="frame" x="20" y="148" width="374" height="268"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My QR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyw-tY-dCN">
-                                <rect key="frame" x="177" y="105" width="60" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="XE3-2A-BeG"/>
-                                    <constraint firstAttribute="height" constant="25" id="iRA-Ic-hQO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jlQ-nY-a4W" firstAttribute="leading" secondItem="cVA-UE-1yp" secondAttribute="leading" id="4x4-us-JNH"/>
                             <constraint firstItem="jlQ-nY-a4W" firstAttribute="top" secondItem="rmo-Y4-f61" secondAttribute="top" constant="436" id="9EH-1C-RZo"/>
                             <constraint firstItem="jlQ-nY-a4W" firstAttribute="top" secondItem="cVA-UE-1yp" secondAttribute="bottom" constant="20" id="GUU-wv-bIF"/>
+                            <constraint firstItem="WTo-zX-Zqd" firstAttribute="centerY" secondItem="nyw-tY-dCN" secondAttribute="centerY" id="Iqj-w9-KvD"/>
                             <constraint firstItem="v7p-HG-Mqt" firstAttribute="trailing" secondItem="cVA-UE-1yp" secondAttribute="trailing" id="JHZ-Ue-rJP"/>
                             <constraint firstItem="cVA-UE-1yp" firstAttribute="leading" secondItem="yUM-aE-Nct" secondAttribute="leading" constant="20" id="JtQ-LS-Gbj"/>
                             <constraint firstItem="nyw-tY-dCN" firstAttribute="centerX" secondItem="yUM-aE-Nct" secondAttribute="centerX" id="KSZ-HJ-fQt"/>
                             <constraint firstItem="v7p-HG-Mqt" firstAttribute="centerX" secondItem="pON-VH-xio" secondAttribute="centerX" id="Lh4-Y7-R3e"/>
                             <constraint firstItem="cVA-UE-1yp" firstAttribute="top" secondItem="nyw-tY-dCN" secondAttribute="bottom" constant="18" id="Y3V-HM-8oQ"/>
+                            <constraint firstAttribute="trailing" secondItem="WTo-zX-Zqd" secondAttribute="trailing" constant="20" id="aNQ-6S-w99"/>
                             <constraint firstItem="hrY-Iu-3Ur" firstAttribute="top" secondItem="jlQ-nY-a4W" secondAttribute="bottom" constant="8" id="bCe-KU-499"/>
                             <constraint firstItem="yUM-aE-Nct" firstAttribute="trailing" secondItem="cVA-UE-1yp" secondAttribute="trailing" constant="20" id="hEb-cq-DqT"/>
                             <constraint firstItem="nyw-tY-dCN" firstAttribute="top" secondItem="yUM-aE-Nct" secondAttribute="top" constant="17" id="lCA-18-A9L"/>
@@ -481,7 +509,7 @@ Monitor your health</string>
                                     <constraint firstAttribute="height" constant="50" id="7f0-Aa-Yu9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Eroll">
+                                <state key="normal" title="Enroll">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
