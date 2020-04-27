@@ -13,6 +13,8 @@ import AVFoundation
 class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     @IBOutlet weak var cameraContainerView: UIView!
     @IBOutlet weak var startStopButton: UIButton!
+    @IBOutlet var trustedDeviceButton: UIButton!
+    
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     private let permissionsManager = CameraPermissionsManager()
@@ -24,9 +26,62 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadUI()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        previewLayer?.frame = cameraContainerView.layer.bounds
+        if let connection = self.previewLayer?.connection {
+            let orientation = self.view.window?.windowScene?.interfaceOrientation ?? UIInterfaceOrientation.portrait
+            let previewLayerConnection : AVCaptureConnection = connection
+            
+            if (previewLayerConnection.isVideoOrientationSupported) {
+                switch (orientation) {
+                case .landscapeRight:
+                    previewLayerConnection.videoOrientation = AVCaptureVideoOrientation.landscapeRight
+                case .landscapeLeft:
+                    previewLayerConnection.videoOrientation = AVCaptureVideoOrientation.landscapeLeft
+                case .portraitUpsideDown:
+                    previewLayerConnection.videoOrientation = AVCaptureVideoOrientation.portraitUpsideDown
+                default:
+                    previewLayerConnection.videoOrientation = AVCaptureVideoOrientation.portrait
+                }
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if (captureSession?.isRunning == false) {
+            captureSession?.startRunning()
+        }
+        self.hideNavigationBar()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if (captureSession?.isRunning == true) {
+            captureSession?.stopRunning()
+        }
+        self.showNavigationBar()
+    }
+    
+    // setup screen
+    func loadUI() {
         view.backgroundColor = UIColor.black
         self.showSpinner(onView: self.view)
         startStopButton.setTitle("Start", for: .normal)
+        if (UIApplication.shared.delegate as! AppDelegate).userTypeIsVendor {
+            trustedDeviceButton.isHidden = true
+        }
         // checking permission for camera
         permissionsManager.performCameraAuthorization(forController: self) { responseStatus in
             if responseStatus == .authorized {
@@ -35,51 +90,6 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                 self.removeSpinner()
             }
         }
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return UIStatusBarStyle.lightContent
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        previewLayer?.frame = cameraContainerView.layer.bounds
-        if let connection = self.previewLayer?.connection {
-            let orientation = self.view.window?.windowScene?.interfaceOrientation ?? UIInterfaceOrientation.portrait
-            let previewLayerConnection : AVCaptureConnection = connection
-
-            if (previewLayerConnection.isVideoOrientationSupported) {
-                switch (orientation) {
-                    case .landscapeRight:
-                        previewLayerConnection.videoOrientation = AVCaptureVideoOrientation.landscapeRight
-                    case .landscapeLeft:
-                        previewLayerConnection.videoOrientation = AVCaptureVideoOrientation.landscapeLeft
-                    case .portraitUpsideDown:
-                        previewLayerConnection.videoOrientation = AVCaptureVideoOrientation.portraitUpsideDown
-                    default:
-                        previewLayerConnection.videoOrientation = AVCaptureVideoOrientation.portrait
-                }
-            }
-        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        if (captureSession?.isRunning == false) {
-            captureSession?.startRunning()
-        }
-        self.hideNavigationBar()
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        if (captureSession?.isRunning == true) {
-            captureSession?.stopRunning()
-        }
-        self.showNavigationBar()
     }
     
     // MARK: Camera Settings
@@ -107,7 +117,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
             captureSession.addInput(videoInput)
         } else { //simulator
             captureSession = nil
-            viewModel.failed()
+            viewModel.showAlertForScanComplete(title: PresenterUtilsAppValues.Error, message: PresenterUtilsAppValues.ScanningFailed, viewController: self)
             self.removeSpinner()
             return
         }
@@ -122,7 +132,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
             metadataOutput.metadataObjectTypes = [.qr]
         } else { //simulator
             captureSession = nil
-            viewModel.failed()
+            viewModel.showAlertForScanComplete(title: PresenterUtilsAppValues.Error, message: PresenterUtilsAppValues.ScanningFailed, viewController: self)
             self.removeSpinner()
             return
         }
@@ -163,13 +173,13 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
             // Show bounds
             let qrCodeObject = previewLayer.transformedMetadataObject(for: readableObject)
             showQRCodeBounds(frame: qrCodeObject?.bounds)
-            self.viewModel.parseData(parsedString: stringValue)
+            self.viewModel.parseData(parsedString: stringValue, viewController: self)
             startStopPressed(self)
         }
     }
     
     // MARK: Button Action
-
+    
     //Button action for start and stop scanning
     @IBAction func startStopPressed(_ sender: Any) {
         if (captureSession?.isRunning == true) {

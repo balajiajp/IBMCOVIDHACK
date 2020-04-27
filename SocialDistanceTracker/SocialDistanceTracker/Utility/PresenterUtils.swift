@@ -17,8 +17,11 @@ struct PresenterUtilsAppValues {
     static let ScanningFailed = "Scanning failed"
     static let Error = "Error"
     static let CameraDenied = "Camera access is denied"
-    static let TrustedDevice = "Device Detected"
-    static let TrustedDeviceMSG = "This is a Trusted Device"
+    static let DeviceDetected = "Device Detected"
+    static let DeviceAdded = "Device successfully added to trusted list"
+    static let DeviceAlreadyAdded = "Device already added in trusted list"
+    static let Congratulations = "Congratulations!"
+    static let UserVarifiedSuccessfully = "You have successfully verified the QR Code"
 }
 
 struct PresenterUtils {
@@ -75,10 +78,10 @@ struct PresenterUtils {
     }
     
     // alert for trusted device detected
-    static func presentTrustedDeviceAlert(_ fromController: UIViewController) {
+    static func presentTrustedDeviceAlert(_ fromController: UIViewController, title: String, message: String) {
         let cancelAction = UIAlertAction(title: PresenterUtilsAppValues.Okay, style: .default, handler: nil)
-        PresenterUtils.presentAlertWithTitle(PresenterUtilsAppValues.TrustedDevice,
-                                             message: PresenterUtilsAppValues.TrustedDeviceMSG,
+        PresenterUtils.presentAlertWithTitle(title,
+                                             message: message,
                                              cancelAction: cancelAction,
                                              alternateActions: nil,
                                              fromController: fromController)

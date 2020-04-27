@@ -23,7 +23,7 @@ public enum UserCodeType: String {
 }
 
 class ScannerViewModel: NSObject {
-
+    
     var person : PersonModel = PersonModel()
     
     // qrCodeBounds
@@ -35,7 +35,7 @@ class ScannerViewModel: NSObject {
     }()
     
     // For converting string to model
-    func parseData(parsedString: String) {
+    func parseData(parsedString: String, viewController: UIViewController) {
         let filteredChars = "{}\"\n\t"
         let parsedString = parsedString.filter { filteredChars.range(of: String($0)) == nil }
         let typeArray : [String] = parsedString.components(separatedBy: ",")
@@ -59,33 +59,43 @@ class ScannerViewModel: NSObject {
             }
         }
         
-        guard person.firstName != nil, person.userType != nil else {
-            return
+        /*guard person.firstName != nil, person.userType != nil else {
+         return
+         }*/
+        
+        if (UIApplication.shared.delegate as! AppDelegate).userTypeIsVendor {
+            showAlertForScanComplete(title: PresenterUtilsAppValues.Congratulations, message: PresenterUtilsAppValues.UserVarifiedSuccessfully, viewController: viewController)
+        } else {
+            self.saveToUserDefault(people: person, viewController: viewController)
         }
-        self.saveToUserDefault(people: person)
     }
     
     // For saving to trusted list
-    func saveToUserDefault(people:PersonModel) {
+    func saveToUserDefault(people:PersonModel, viewController: UIViewController) {
+        
         var loadedData: [[String: String]] = self.fetchFromUserDefault()
         if loadedData.count != 0 {
             let peopleDict = ["FirstName":"\( String(person.firstName))","MobileNumber":"\(person.mobileNumber ?? "")","UserType":"\(String(person.userType))"]
             
             let contains = loadedData.map(){$0 == peopleDict}.contains(true)
             if contains{
-                guard let presentVC = UIApplication.getPresentedViewController() else {
-                    return
-                }
-                PresenterUtils.presentTrustedDeviceAlert(presentVC)
-                UIDevice.vibrate()
+                showAlertForScanComplete(title: PresenterUtilsAppValues.DeviceDetected, message: PresenterUtilsAppValues.DeviceAlreadyAdded, viewController: viewController)
             } else {
                 loadedData.append(peopleDict as [String : String])
             }
             UserDefaults.standard.set(loadedData, forKey: "TrustedDevice")
+            showAlertForScanComplete(title: PresenterUtilsAppValues.DeviceDetected, message: PresenterUtilsAppValues.DeviceAdded, viewController: viewController)
         } else {
             let peopleDict = ["FirstName":"\( String(person.firstName))","MobileNumber":"\(person.mobileNumber ?? "")","UserType":"\(String(person.userType))"]
             UserDefaults.standard.set([peopleDict], forKey: "TrustedDevice")
+            showAlertForScanComplete(title: PresenterUtilsAppValues.DeviceDetected, message: PresenterUtilsAppValues.DeviceAdded, viewController: viewController)
         }
+    }
+    
+    //alert after scan completed
+    func showAlertForScanComplete(title: String, message: String, viewController: UIViewController) {
+        UIDevice.vibrate()
+        PresenterUtils.presentTrustedDeviceAlert(viewController, title: title, message: message)
     }
     
     // For getting all trusted list
@@ -94,19 +104,5 @@ class ScannerViewModel: NSObject {
             return loadedData
         }
         return []
-    }
-    
-    // alert for failed to scan
-    func failed() {
-        let cancelAction = UIAlertAction(title: PresenterUtilsAppValues.Dismiss, style: .default, handler: nil)
-        guard let presentVC = UIApplication.getPresentedViewController() else {
-            return
-        }
-        PresenterUtils.presentAlertWithTitle(PresenterUtilsAppValues.ScanningFailed,
-                                              message: "",
-                                              cancelAction: cancelAction,
-                                              alternateActions: nil,
-                                              fromController: presentVC,
-                                              preferredStyle: .alert)
     }
 }

@@ -33,6 +33,7 @@
 		8B53B55D245626F000A6DBA8 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53B55C245626F000A6DBA8 /* ScannerViewModel.swift */; };
 		8B53B55F245627D400A6DBA8 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53B55E245627D400A6DBA8 /* Extension.swift */; };
 		8B53B5612456322300A6DBA8 /* TrustedDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53B5602456322300A6DBA8 /* TrustedDeviceViewController.swift */; };
+		8B84A5F82456B8510056F636 /* TrustedDeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84A5F72456B8510056F636 /* TrustedDeviceViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		8B53B55C245626F000A6DBA8 /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
 		8B53B55E245627D400A6DBA8 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		8B53B5602456322300A6DBA8 /* TrustedDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedDeviceViewController.swift; sourceTree = "<group>"; };
+		8B84A5F72456B8510056F636 /* TrustedDeviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedDeviceViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 			children = (
 				46754B2F2454980500873031 /* PersonModel.swift */,
 				8B53B55C245626F000A6DBA8 /* ScannerViewModel.swift */,
+				8B84A5F72456B8510056F636 /* TrustedDeviceViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				46754B222454839900873031 /* HealthKitViewController.swift in Sources */,
 				8B53B55D245626F000A6DBA8 /* ScannerViewModel.swift in Sources */,
 				6DF6C6892455846800DD1377 /* SceneDelegate.swift in Sources */,
+				8B84A5F82456B8510056F636 /* TrustedDeviceViewModel.swift in Sources */,
 				6DF6C6852455763A00DD1377 /* TutorialPageViewController.swift in Sources */,
 				46754B1D24542F0400873031 /* CovidQuestTask.swift in Sources */,
 				46754B332454980500873031 /* QRCodeGenarator.swift in Sources */,

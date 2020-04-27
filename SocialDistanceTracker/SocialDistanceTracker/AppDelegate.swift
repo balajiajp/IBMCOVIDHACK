@@ -13,6 +13,7 @@ import ResearchKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var userIsRegistered = false
+    var userTypeIsVendor = false
     var userQRCode : UIImage? = nil
     var window: UIWindow?
 

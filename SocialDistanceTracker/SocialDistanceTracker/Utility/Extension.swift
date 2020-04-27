@@ -15,7 +15,7 @@ extension UIViewController {
     // hide the navigation bar
     func hideNavigationBar(){
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-
+        
     }
     
     // show the navigation bar
@@ -56,24 +56,3 @@ extension UIDevice {
     }
 }
 
-extension UIWindow {
-    static var key: UIWindow? {
-        if #available(iOS 13, *) {
-            return UIApplication.shared.windows.first { $0.isKeyWindow }
-        } else {
-            return UIApplication.shared.keyWindow
-        }
-    }
-}
-
-extension UIApplication{
-    // get presented view conroller
-    class func getPresentedViewController() -> UIViewController? {
-        var presentViewController = UIWindow.key?.rootViewController
-        while let pVC = presentViewController?.presentedViewController
-        {
-            presentViewController = pVC
-        }
-        return presentViewController
-    }
-}

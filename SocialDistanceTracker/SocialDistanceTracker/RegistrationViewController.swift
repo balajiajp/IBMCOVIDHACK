@@ -84,6 +84,7 @@ class RegistrationViewController: UIViewController, CLLocationManagerDelegate {
             guard let qrImage = QRCodeGenarator.generateQRCode(dictData: localDict) else {return}
             
             (UIApplication.shared.delegate as! AppDelegate).userQRCode = qrImage
+            (UIApplication.shared.delegate as! AppDelegate).userTypeIsVendor = (userType == .vendor) ? true : ((userType == .user) ? false : false)
             self.showRegSuccessAlert()
         }else{
             showAlert()

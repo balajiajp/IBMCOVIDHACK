@@ -11,7 +11,7 @@ import UIKit
 class TrustedDeviceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var tableview: UITableView!
-    var viewModel = ScannerViewModel()
+    var viewModel = TrustedDeviceViewModel()
     var person : PersonModel = PersonModel()
     var trustedDeviceData: [[String: String]] = []
     
