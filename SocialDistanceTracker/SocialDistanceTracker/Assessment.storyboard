@@ -200,6 +200,20 @@ Monitor your health</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVm-li-aGL">
+                                <rect key="frame" x="339" y="25" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="HPA-NG-Lco"/>
+                                    <constraint firstAttribute="width" constant="50" id="UfN-5c-rhx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                <state key="normal" title="ⓧ">
+                                    <color key="titleColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickActionClose:" destination="JsK-ye-muz" eventType="touchUpInside" id="4h7-Gz-yPK"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Heart Rate :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mG3-bq-oVa">
                                 <rect key="frame" x="52" y="312" width="118" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -230,6 +244,10 @@ Monitor your health</string>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2PG-pc-htr" firstAttribute="trailing" secondItem="VVm-li-aGL" secondAttribute="trailing" constant="25" id="edD-7u-3h6"/>
+                            <constraint firstItem="VVm-li-aGL" firstAttribute="top" secondItem="2PG-pc-htr" secondAttribute="top" constant="25" id="rIf-4K-ITd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2PG-pc-htr"/>
                     </view>
                     <connections>

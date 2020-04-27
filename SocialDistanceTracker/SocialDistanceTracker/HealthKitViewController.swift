@@ -190,7 +190,10 @@ class HealthKitViewController: UIViewController {
         self.HealthKitStore.execute(query)
     }
     
-
+    @IBAction func clickActionClose(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
