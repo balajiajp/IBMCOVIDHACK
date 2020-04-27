@@ -24,6 +24,8 @@
 	<string>We need bluetooth to calculate distance between two device</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>We need bluetooth to calculate distance between two device</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need camera permission for code scanner</string>
 	<key>NSHealthShareUsageDescription</key>
 	<string>SocialDistanceTracker would like to access your Health data to help you track your symptoms and your treatment. </string>
 	<key>NSHealthUpdateUsageDescription</key>

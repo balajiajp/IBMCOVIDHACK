@@ -31,7 +31,7 @@ class SelfAssmtViewController: UIViewController, ORKTaskViewControllerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.qrImageView.image = (UIApplication.shared.delegate as! AppDelegate).userQRCode
-        self.qrImageView.backgroundColor = UIColor.green
+        self.qrImageView.backgroundColor = UIColor.red
     }
     
     @IBAction func selfAssmtActionHandler(_ button: UIButton) {
@@ -44,7 +44,14 @@ class SelfAssmtViewController: UIViewController, ORKTaskViewControllerDelegate {
     @IBAction func closeResultActionHandler(_ button: UIButton) {
         resultsView.isHidden = true
     }
-
+    
+    @IBAction func clickActionScan(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Scanner", bundle:nil)
+        guard let ScannerVC = storyBoard.instantiateViewController(withIdentifier: "ScannerViewController") as? ScannerViewController else {
+            return
+        }
+        self.present(ScannerVC, animated:true, completion:nil)
+    }
     
     //MARK: - ResearchKit Task Controller Delegates
     func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {

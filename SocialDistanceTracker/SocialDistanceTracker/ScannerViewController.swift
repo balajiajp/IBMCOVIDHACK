@@ -38,20 +38,11 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         
         previewLayer?.frame = cameraContainerView.layer.bounds
         if let connection = self.previewLayer?.connection {
-            let orientation = self.view.window?.windowScene?.interfaceOrientation ?? UIInterfaceOrientation.portrait
+            
             let previewLayerConnection : AVCaptureConnection = connection
             
             if (previewLayerConnection.isVideoOrientationSupported) {
-                switch (orientation) {
-                case .landscapeRight:
-                    previewLayerConnection.videoOrientation = AVCaptureVideoOrientation.landscapeRight
-                case .landscapeLeft:
-                    previewLayerConnection.videoOrientation = AVCaptureVideoOrientation.landscapeLeft
-                case .portraitUpsideDown:
-                    previewLayerConnection.videoOrientation = AVCaptureVideoOrientation.portraitUpsideDown
-                default:
-                    previewLayerConnection.videoOrientation = AVCaptureVideoOrientation.portrait
-                }
+                previewLayerConnection.videoOrientation = AVCaptureVideoOrientation.portrait
             }
         }
     }
@@ -207,6 +198,6 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     }
     
     @IBAction func clickActionBack(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
 }

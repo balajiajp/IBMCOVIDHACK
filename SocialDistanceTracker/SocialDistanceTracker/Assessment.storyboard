@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wMI-kW-Chn">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -64,6 +65,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTo-zX-Zqd">
+                                <rect key="frame" x="334" y="100" width="60" height="35"/>
+                                <color key="backgroundColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="ZxY-Bg-ppq"/>
+                                    <constraint firstAttribute="width" constant="60" id="okQ-kO-8H0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="SCAN">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickActionScan:" destination="9PR-ev-Dll" eventType="touchUpInside" id="noR-4P-K68"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIj-Xs-sho">
                                 <rect key="frame" x="10" y="100" width="394" height="685"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -131,11 +152,13 @@ Monitor your health</string>
                             <constraint firstItem="jlQ-nY-a4W" firstAttribute="leading" secondItem="cVA-UE-1yp" secondAttribute="leading" id="4x4-us-JNH"/>
                             <constraint firstItem="jlQ-nY-a4W" firstAttribute="top" secondItem="rmo-Y4-f61" secondAttribute="top" constant="436" id="9EH-1C-RZo"/>
                             <constraint firstItem="jlQ-nY-a4W" firstAttribute="top" secondItem="cVA-UE-1yp" secondAttribute="bottom" constant="20" id="GUU-wv-bIF"/>
+                            <constraint firstItem="WTo-zX-Zqd" firstAttribute="centerY" secondItem="nyw-tY-dCN" secondAttribute="centerY" id="Iqj-w9-KvD"/>
                             <constraint firstItem="v7p-HG-Mqt" firstAttribute="trailing" secondItem="cVA-UE-1yp" secondAttribute="trailing" id="JHZ-Ue-rJP"/>
                             <constraint firstItem="cVA-UE-1yp" firstAttribute="leading" secondItem="yUM-aE-Nct" secondAttribute="leading" constant="20" id="JtQ-LS-Gbj"/>
                             <constraint firstItem="nyw-tY-dCN" firstAttribute="centerX" secondItem="yUM-aE-Nct" secondAttribute="centerX" id="KSZ-HJ-fQt"/>
                             <constraint firstItem="v7p-HG-Mqt" firstAttribute="centerX" secondItem="pON-VH-xio" secondAttribute="centerX" id="Lh4-Y7-R3e"/>
                             <constraint firstItem="cVA-UE-1yp" firstAttribute="top" secondItem="nyw-tY-dCN" secondAttribute="bottom" constant="18" id="Y3V-HM-8oQ"/>
+                            <constraint firstAttribute="trailing" secondItem="WTo-zX-Zqd" secondAttribute="trailing" constant="20" id="aNQ-6S-w99"/>
                             <constraint firstItem="hrY-Iu-3Ur" firstAttribute="top" secondItem="jlQ-nY-a4W" secondAttribute="bottom" constant="8" id="bCe-KU-499"/>
                             <constraint firstItem="yUM-aE-Nct" firstAttribute="trailing" secondItem="cVA-UE-1yp" secondAttribute="trailing" constant="20" id="hEb-cq-DqT"/>
                             <constraint firstItem="nyw-tY-dCN" firstAttribute="top" secondItem="yUM-aE-Nct" secondAttribute="top" constant="17" id="lCA-18-A9L"/>
