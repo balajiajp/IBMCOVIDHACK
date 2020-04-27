@@ -31,7 +31,7 @@ class SelfAssmtViewController: UIViewController, ORKTaskViewControllerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.qrImageView.image = (UIApplication.shared.delegate as! AppDelegate).userQRCode
-        self.qrImageView.backgroundColor = UIColor.red
+        self.qrImageView.backgroundColor = UIColor.black
     }
     
     @IBAction func selfAssmtActionHandler(_ button: UIButton) {
